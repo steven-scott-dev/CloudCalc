@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+📱 CloudCalc - React Frontend
+CloudCalc is a stylish, responsive calculator web app built with React and MathJS. It lets users sign up, log in, perform calculations, and view their history — all powered by a connected backend API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Features
+    
+    🔐 User Signup / Login with JWT
 
-## Available Scripts
+    🧮 Real-time expression evaluation using mathjs
 
-In the project directory, you can run:
+    📜 History saved per user (via backend API)
 
-### `npm start`
+    💾 Auth token saved to localStorage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    🌈 Fully styled with custom CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    📱 Responsive design for desktop and mobile
 
-### `npm test`
+    🧰 Tech Stack
+React — UI framework
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Axios — For HTTP requests
 
-### `npm run build`
+MathJS — Evaluates user expressions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+CSS — Custom calculator styling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+JWT — Auth token stored locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+⚙️ Setup & Development
+1. 📦 Install Dependencies
+bash
+Copy code
+npm install
+2. 🧪 Run Locally
+bash
+Copy code
+npm start
+This will start the React development server at:
 
-### `npm run eject`
+arduino
+Copy code
+http://localhost:3000
+Make sure your backend is running on port 5000 (or update API URLs accordingly).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔨 Build for Production
+bash
+Copy code
+npm run build
+This creates a build/ folder with a production-optimized version of your app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To test the build locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copy code
+npm install -g serve
+serve -s build
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🌐 API Integration
+The frontend expects the backend to be hosted at http://localhost:5000.
 
-## Learn More
+Endpoints used:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+POST /users/signup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+POST /users/login
 
-### Code Splitting
+GET /api/history
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+POST /api/history
 
-### Analyzing the Bundle Size
+These require a valid JWT token in the Authorization header (after login/signup).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🧠 Auth Flow Summary
+Signup/Login sends credentials to backend
 
-### Making a Progressive Web App
+If successful, token is returned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Token is stored in localStorage
 
-### Advanced Configuration
+Future requests (like fetching history) use the token in headers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👨‍💻 Author
+Created by Clay Scott
