@@ -37,6 +37,11 @@ app.use('/users', userRoutes);
 // Mount routes for calculator history at /api/history
 app.use('/api/history', historyRoutes);
 
+app.get('/', (req, res) => {
+  res.redirect('https://cloudcalc.netlify.app');
+});
+
+
 // 🔄 Sync the database models with MySQL
 // WARNING: { force: true } will DROP and RECREATE tables every time you restart the server
 db.sequelize.sync({ force: true }) // Use { alter: true } in production or remove `force`
