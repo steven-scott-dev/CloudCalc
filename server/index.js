@@ -50,4 +50,4 @@ db.sequelize.sync({ force: true }) // Use { alter: true } in production or remov
 
 // 🌐 Start the server on port defined in .env or fallback to 5000
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`🚀 Server running on http://localhost:${PORT}`));
