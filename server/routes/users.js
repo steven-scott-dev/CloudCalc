@@ -1,6 +1,6 @@
 // Import required libraries
 const express = require('express');
-const bcrypt = require('bcrypt');                // For hashing passwords
+const bcrypt = require('bcryptjs');               // For hashing passwords
 const jwt = require('jsonwebtoken');             // For creating tokens
 const router = express.Router();                 // Create a new router instance
 const db = require('../models');                 // Import all Sequelize models
