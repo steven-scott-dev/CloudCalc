@@ -6,6 +6,10 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Calculator from './components/Calculator';
 
+// This is the base URL for the API, set in the .env file
+const apiBase = process.env.REACT_APP_API_URL;
+
+
 // This is the main App component that controls the whole application
 function App() {
   // This state stores the current logged-in user (null if not logged in)
