@@ -7,13 +7,14 @@ const historyRoutes = require('./routes/history');
 
 const app = express();
 
-// ✅ CORS Fix
+const cors = require('cors');
+
 const allowedOrigins = [
-  'http://localhost:3000',
-  'https://cloudcalcs.netlify.app'
+  'https://cloudcalcs.netlify.app',
+  'http://localhost:3000'
 ];
 
-app.use(cors({
+const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
@@ -21,10 +22,14 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true
-}));
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
 
-app.options('*', cors()); // Preflight
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // <-- Handles preflight correctly
+
 
 // Middlewares
 app.use(express.json());
