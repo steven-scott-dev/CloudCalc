@@ -51,10 +51,11 @@ const Calculator = () => {
 
       // Save the new calculation to the backend
       await axios.post(
-        'http://localhost:5000/api/history',
-        { expression: input, result },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+  `${process.env.REACT_APP_API_URL}/api/history`,
+  { expression: input, result },
+  { headers: { Authorization: `Bearer ${token}` } }
+);
+
 
       // After saving, refresh the history list
       fetchHistory();
