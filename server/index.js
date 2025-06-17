@@ -7,7 +7,6 @@ const historyRoutes = require('./routes/history');
 
 const app = express();
 
-const cors = require('cors');
 
 const allowedOrigins = [
   'https://cloudcalcs.netlify.app',
