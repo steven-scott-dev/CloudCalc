@@ -27,7 +27,7 @@ const Login = ({ onAuth }) => {
 
     try {
       // Send the form data (email + password) to the server
-      const { data } = await axios.post('http://localhost:5000/users/login', form);
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, form);
 
       // Save the token in localStorage so we stay logged in across pages
       localStorage.setItem('token', data.token);
