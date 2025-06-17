@@ -33,7 +33,8 @@ const Signup = ({ onAuth }) => {
 
     try {
       // Send the form data to the backend server using a POST request
-      const { data } = await axios.post('http://localhost:5000/users/signup', form);
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/users/signup`, form);
+
 
       // Save the received token in localStorage to keep the user logged in
       localStorage.setItem('token', data.token);
