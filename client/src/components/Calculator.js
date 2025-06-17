@@ -22,8 +22,8 @@ const Calculator = () => {
       // Get the JWT token from localStorage to authorize the request
       const token = localStorage.getItem('token');
       // Make a GET request to the /api/history route on your server
-      const res = await axios.get('http://localhost:5000/api/history', {
-        headers: { Authorization: `Bearer ${token}` }
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/history`, {
+  headers: { Authorization: `Bearer ${token}` }
       });
       // Save the returned data into state
       setHistory(res.data);
